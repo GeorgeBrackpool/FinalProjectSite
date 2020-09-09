@@ -1,0 +1,179 @@
+﻿
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap-flatly.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+
+    <style>
+
+
+        .logo {
+            height: 55px;
+            padding-right: 15px;
+            padding-left: 5px;
+        }
+
+        .navbar-brand {
+            min-height: 55px;
+            padding: 0 5px 10px;
+        }
+
+        .fa {
+            padding: 15px;
+            /*font-size: 10px; change for size if fa- not needed*/ 
+            color: #FFF;
+        }
+
+            .fa:hover {
+                color: #D5D5D5;
+                text-decoration: none;
+            }
+
+        /*.icon {
+            max-width: 200px;
+        }*/
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a class="navbar-brand">@Html.ActionLink("Index", "Home", new { area = "" })</a>*@
+                <a class="navbar-brand" href="#" onclick="location.href='@Url.Action("Index", "Home")'"><img src="~/images/redone-logo.png" alt="OSS Logo" class="img-responsive logo" /></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" onclick="location.href='@Url.Action("AboutUs", "About")'">About Us</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Modules <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="location.href='@Url.Action("SocialEngineering", "SocialEngineering")'">Social Engineering</a></li>
+                            <li><a href="#" onclick="location.href='@Url.Action("Encryption", "Encryption")'">Encryption</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="location.href='@Url.Action("QANDA", "QANDA")'">Q&A</a></li>
+                    <li><a href="#" onclick="location.href='@Url.Action("ContactUs", "ContactUs")'">Contact Us</a></li>
+                    @if (Request.IsAuthenticated)
+                    {
+
+
+                        <li><a href="#" onclick="location.href='@Url.Action("Index", "Profile")'">Admin Area</a></li>
+
+
+
+                    }
+                </ul>
+                
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="navbar-nav navbar-right">
+
+
+                                <li style="padding-right:20px;"><a href="#">@HttpContext.Current.User.Identity.Name</a></li>
+
+                                <li style="padding-right:20px;"><a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li>
+                            </ul>
+                           
+                        }
+                    }
+                    else
+                    {
+                        <ul class="navbar-nav navbar-right">
+                            <li style="padding-right:20px; padding-top:20px;">@Html.ActionLink("Register", "Registration", "User", routeValues: null, htmlAttributes: new { id = "Register" })</li>
+                            <li style="padding-right:20px; padding-top:20px;">@Html.ActionLink("Log in", "Login", "User", routeValues: null, htmlAttributes: new { id = "Login" })</li>
+                        </ul>
+                    }
+                    
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+    </div>
+        <hr />
+        <footer class="container-fluid text-center" style="background-color:#2c3e50;">
+            
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 style="color:white;"><u>Socials</u></h3>
+                    <a href="#" class="fa fa-facebook fa-3x"></a>
+                    <a href="#" class="fa fa-twitter fa-3x"></a>
+                    <a href="#" class="fa fa-instagram fa-3x"></a>
+                    <a href="https://www.linkedin.com/in/george-brackpool-384ba71a2/" class="fa fa-linkedin fa-3x"></a>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 style="color:white;"><u>Rescources</u></h3>
+                    <a href="#" onclick="location.href='@Url.Action("AboutUs", "About")'">Module Information Download</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("Sitemap", "Home")'">SiteMap</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("SocialEngineering", "SocialEngineering")'">Social Engineering</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("Encryption", "Encryption")'">Encryption</a>
+                </div>
+
+
+
+                <div class="col-sm-3">
+
+
+                    <h3 style="color:white;"><u>About</u></h3>
+                    <a href="#" onclick="location.href='@Url.Action("AboutUs", "About")'">About Us</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("QANDA", "QANDA")'">Q&A</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("ContactUs", "ContactUs")'">Contact Us</a>
+                </div>
+
+                <div class="col-sm-3">
+
+
+                    <h3 style="color:white;"><u>Helpful CyberSecurity Sites</u></h3>
+                    <a href="https://www.kaspersky.co.uk/">Kapersky</a>
+                    <br />
+                    <a href="https://krebsonsecurity.com/">Krebs On Security</a>
+                    <br />
+                    <a href="https://www.bleepingcomputer.com/">Bleeping Computer</a>
+
+                </div>
+            </div>
+        </footer>
+
+    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

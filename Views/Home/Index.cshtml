@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<title>@ViewBag.Title</title>
+<head>
+  
+
+    <style>
+        #home {
+            background: url(../../images/social-engineering-hacking.jpg) no-repeat center center fixed;
+            display: table;
+            height: 100%;
+            position: relative;
+            width: 100%;
+            background-size: cover;
+            filter: grayscale(10%);
+        }
+
+        .landing-text {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+            .landing-text h1 {
+                font-size: 500%;
+                font-weight: 700;
+            }
+
+        .padding {
+            padding: 80px 0;
+        }
+
+            .padding img {
+                width: 100%;
+            }
+
+        #fixed{
+            background: url(../../images/fixed-home-img.jpg) no-repeat center center fixed;
+            display: table;
+            height: 60%;
+            position: relative;
+            width: 100%;
+            background-size: cover;
+        }
+    </style>
+    </head>
+
+
+    <body>
+        <div id="home">
+            <div class="landing-text">
+                <h1 style="color:red;">Online Security Solutions</h1>
+                <h2 style="color: crimson;">Learn about current threats to your privacy and security.</h2>
+                <a href="#" class="btn btn-info btn-lg" onclick="location.href='@Url.Action("Registration", "User")'">Get Started</a>
+
+            </div>
+        </div>
+        <div class="padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="~/images/online-security1.png" />
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h2>What you can find here</h2>
+                        <p class="lead">
+                            Welcome to Online Security Solutions. The soon to be number one hub for learning about current and future Cybersecurity threats and measures to put into place to protect yourself against these threats at home and at work. Instead of searching across multiple sites, documents and articles
+                            to learn about online security by signing up here you have access to all that information on one site!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <h4>Learn about Social Engineering, Encryption, Privacy and more!</h4>
+                        <p>
+                            After you have signed up to our site you will gain free access to a variety of modules that will provide information on online threats and how to secure yourself against them. There is a ongoing battle from companies and malicious individuals for your data to exploit for their benefit. Whilst there has been major developments in helping the individual take back control of their data with new laws and regulations such as GDPR, you need to be aware of many security threats you might face
+                            such as phishing and malware attacks. We will inform you of these threats to your data and devices and more importantly how to defend against them and take back control and keep yourself secure online!
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <img src="~/images/homepage-image2.jpg" class="img-responsive" />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <h4>Built using the MVC Framework</h4>
+                        <p>
+                            This site was built using MVC which is a software design pattern that divides the related program logic into three interconnected elements (Model, View and Controller). This is done to separate internal representations of information from the ways information is presented to and accepted from the user. Several languages were used to help construct the frontend and backend of this site! These
+                            include: SQL, Javascript, C#, Bootstrap, Html, CSS, Ajax and ASP.NET.
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <img src="~/images/1200px-MVC-Process.svg.png" class="img-responsive" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="fixed">
+            <p></p>
+        </div>
+
+        <div class="padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <h4>Built to boost your learning and give simple instructions on how to secure yourself</h4>
+                        <p>
+                            With all the information here at Online Security Solutions it can be hard to remember the details so we offer interactive content such as Quiz's and Videos to help supplement your learning along with lists of practical tasks you can carry out to help prevent attacks and secure your data. Everyone learns differently
+                            which is why we wanted to offer more than way of learning covering Visual, Audio and Practical forms of learning to compliment all the learning styles. The site continues to be a work in progress and we are always eager to hear feedback from you. If you have a website issue or suggestion to help improve the content of the website then <a href='@Url.Action("QANDA", "QANDA")'>Click here</a> and scroll to the bottom of the page and fill out the Enquiry sheet! We will reply as soon as possible.
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="~/images/how-to-improve-your-online-security-and-privacy-in-10-easy-steps.jpg" class="img-responsive" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+

@@ -1,2 +1,2 @@
 # FinalProjectSite
- Site made using MVC
+ Site made using ASP.NET MVC.

@@ -40,7 +40,7 @@ namespace FinalProjectSite.Controllers
                 //SMTP Server Address of gmail
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
-                smtp.Credentials = new System.Net.NetworkCredential("onlinesecsolution@gmail.com", "B***********");
+                smtp.Credentials = new System.Net.NetworkCredential("onlinesecsolution@gmail.com", "#");
                 // Smtp Email ID and Password For authentication
                 smtp.EnableSsl = true;
                 smtp.Send(mail);

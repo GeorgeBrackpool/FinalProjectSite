@@ -16,7 +16,7 @@ namespace FinalProjectSite.Controllers
     public class ProfileController : Controller
     {
         // GET: Profile
-        [Authorize(Users = "brackers123@googlemail.com")]
+        [Authorize(Users = "br*********@googlemail.com")]
         public ActionResult Index(string search)
         {
             UserDatabaseEntities dc = new UserDatabaseEntities();
@@ -33,7 +33,7 @@ namespace FinalProjectSite.Controllers
         
 
         // GET: Profile/Details/5
-        [Authorize(Users = "brackers123@googlemail.com")]
+        [Authorize(Users = "br*********@googlemail.com")]
         public ActionResult Details(int id)
         {
             using (UserDatabaseEntities dc = new UserDatabaseEntities())
@@ -80,7 +80,7 @@ namespace FinalProjectSite.Controllers
         }
 
         // POST: Profile/Edit/5
-        [Authorize(Users = "brackers123@googlemail.com")]
+        [Authorize(Users = "br*********@googlemail.com")]
         [HttpPost]
         public ActionResult Edit(int id, User user)
         {
@@ -102,7 +102,7 @@ namespace FinalProjectSite.Controllers
         }
 
         // GET: Profile/Delete/5
-        [Authorize(Users = "brackers123@googlemail.com")]
+        [Authorize(Users = "br*********@googlemail.com")]
         public ActionResult Delete(int id)
         {
             using (UserDatabaseEntities dc = new UserDatabaseEntities())
@@ -112,7 +112,7 @@ namespace FinalProjectSite.Controllers
         }
 
         // POST: Profile/Delete/5
-        [Authorize(Users = "brackers123@googlemail.com")]
+        [Authorize(Users = "br*********@googlemail.com")]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

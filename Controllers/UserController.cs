@@ -190,9 +190,9 @@ namespace FinalProjectSite.Controllers
             var verifyUrl = "/User/"+emailFor+"/" + activationcode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var fromEmail = new MailAddress("onlinesecsolution@gmail.com", "Online Security Solutions");
+            var fromEmail = new MailAddress("#", "Online Security Solutions");
             var toEmail = new MailAddress(Email_Address);
-            var fromEmailPassword = "BrightonUniversity1"; //Password here
+            var fromEmailPassword = "#"; //Password here
 
             string subject = "";
             string body = "";
